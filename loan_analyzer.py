@@ -136,16 +136,16 @@ if analyze_clicked:
     else:
         good_signs.append("Net working capital is positive.")
 
-    # convert score to a rating
- if points <= 2:
-    risk_rating = "Low"
-    risk_summary = "The company shows solid liquidity, manageable leverage, and enough cash flow to cover debt payments."
-elif points <= 5:
-    risk_rating = "Moderate"
-    risk_summary = "The company has some positive signs, but one or more ratios need a closer look."
-else:
-    risk_rating = "High"
-    risk_summary = "Several ratios suggest the company may have difficulty supporting additional debt."
+# convert score to a rating
+    if points <= 2:
+        risk_rating = "Low"
+        risk_summary = "The company shows solid liquidity, manageable leverage, and enough cash flow to cover debt payments."
+    elif points <= 5:
+        risk_rating = "Moderate"
+        risk_summary = "The company has some positive signs, but one or more ratios need a closer look."
+    else:
+        risk_rating = "High"
+        risk_summary = "Several ratios suggest the company may have difficulty supporting additional debt."
     # --- output ---
     st.write(f"**Risk rating: {risk_rating}**")
     st.write(risk_summary)
